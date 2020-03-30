@@ -22,7 +22,7 @@ static long temp1, temp2, temp3, temp4;
     String path = input.nextLine();
     File file = new File(path);
     int elements = util.getLengthOfFile(file);
-    int[] array = util.toArray(file, elements);
+    int[] array = util.readNumber(path);
     System.out.println("\n Choose sorting algorithm: \n Insertionsort \t(1) \n Heapsort \t\t(2)\n Quicksort \t\t(3)\n Mergesort \t\t(4)\n Comparison \t(5)");
     int select = input.nextInt();
         switch (select) {
@@ -41,13 +41,13 @@ static long temp1, temp2, temp3, temp4;
             case 5:
                 insertion(array);
                 temp1 = timerEnd - timerStart;
-                array = util.toArray(file, elements);
+                array = util.readNumber(path);
                 heap(array);
                 temp2 = timerEnd - timerStart;
-                array = util.toArray(file, elements);
+                array = util.readNumber(path);
                 quick(array);
                 temp3 = timerEnd - timerStart;
-                array = util.toArray(file, elements);
+                array = util.readNumber(path);
                 merge(array);
                 temp4 = timerEnd - timerStart;
         }

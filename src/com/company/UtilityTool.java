@@ -1,34 +1,39 @@
 package com.company;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class UtilityTool {
 
     public int getLengthOfFile(File file) throws FileNotFoundException{
         BufferedReader reader = new BufferedReader(new FileReader(file));
-        int length = 0;
-        try {
-            while (reader.readLine() != null) {
-                length++;
-            }
-            reader.close();
+    int length = 0;
+    try {
+        while (reader.readLine() != null) {
+            length++;
         }
-        catch(IOException e){
-            e.printStackTrace();
-            System.out.println("Line counter encountered a problem :'(");
-        }
-        return length;
+        reader.close();
+    } catch(IOException e){
+        e.printStackTrace();
+        System.out.println("Line counter encountered a problem :'(");
+    }
+    return length;
 
     }
+    public static int[]readNumber(String filename) throws FileNotFoundException{
+        Scanner lesen = new Scanner(new FileReader(filename));
+        ArrayList<Integer> al = new ArrayList<Integer>();
 
-    public int[] toArray(File file, int elements) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new FileReader(file));
-        int[] array = new int[elements];
-        int i = 0;
-        while(scanner.hasNextInt()){
-            array[i++] = scanner.nextInt();
+        while(lesen.hasNext()) {
+            al.add(lesen.nextInt());
         }
-        return array;
+        lesen.close();
+
+        int[] a = new int[al.size()];
+        for(int i = 0; i < a.length; i++) {
+            a[i] = al.get(i);
+        }
+        return a;
     }
 
     public void checkIfSorted(int[] array){
