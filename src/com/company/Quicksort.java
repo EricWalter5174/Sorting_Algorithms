@@ -2,15 +2,6 @@ package com.company;
 
 public class Quicksort extends Sorter {
 
-    private static void medianOfThree(int[] a, int p, int r) {
-        if(p < r) {
-            int s = partition(a, p, r);
-            medianOfThree(a, p, s-1);
-            medianOfThree(a, s+1, r);
-        }
-
-    }
-
     private static void median(int[] a, int p, int r) {
         int mid = (r+p)/2;
 
@@ -23,7 +14,6 @@ public class Quicksort extends Sorter {
         } else if(a[r] <= a[p] && a[p] <= a[mid]) {
             swap(a, p, r);
         }
-
     }
 
     private static int partition(int[] a, int p, int r) {
@@ -37,7 +27,6 @@ public class Quicksort extends Sorter {
             }
         }
         swap(a, r, i+1);
-
         return i+1;
     }
 
@@ -47,9 +36,7 @@ public class Quicksort extends Sorter {
             sort(a, p, s-1);
             sort(a, s+1, r);
         }
-
     }
-
 }
 
 
