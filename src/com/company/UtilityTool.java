@@ -1,5 +1,6 @@
 package com.company;
 import java.io.*;
+import java.util.Scanner;
 
 public class UtilityTool {
 
@@ -21,16 +22,11 @@ public class UtilityTool {
     }
 
     public int[] toArray(File file, int elements) throws FileNotFoundException {
-        BufferedReader reader = new BufferedReader(new FileReader(file));
+        Scanner scanner = new Scanner(new FileReader(file));
         int[] array = new int[elements];
-        for (int i = 0; i < elements; i++) {
-            try {
-                array[i] = reader.read();
-            }
-            catch(IOException e){
-                e.printStackTrace();
-                System.out.println("toArray encountered a problem :'(");
-            }
+        int i = 0;
+        while(scanner.hasNextInt()){
+            array[i++] = scanner.nextInt();
         }
         return array;
     }
