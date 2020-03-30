@@ -12,15 +12,15 @@ public class Quicksort extends Sorter {
     }
 
     private static void median(int[] a, int p, int r) {
-        int mitte = (r+p)/2;
+        int mid = (r+p)/2;
 
-        if(a[p] <= a[mitte] && a[mitte] <= a[r]) {
-            swap(a, mitte, r);
-        } else if(a[mitte] <= a[p] && a[p] <= a[r]) {
+        if(a[p] <= a[mid] && a[mid] <= a[r]) {
+            swap(a, mid, r);
+        } else if(a[mid] <= a[p] && a[p] <= a[r]) {
             swap(a, p, r);
-        } else if(a[r] <= a[mitte] && a[mitte] <= a[p]) {
-            swap(a, mitte, r);
-        } else if(a[r] <= a[p] && a[p] <= a[mitte]) {
+        } else if(a[r] <= a[mid] && a[mid] <= a[p]) {
+            swap(a, mid, r);
+        } else if(a[r] <= a[p] && a[p] <= a[mid]) {
             swap(a, p, r);
         }
 
