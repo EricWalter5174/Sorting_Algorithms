@@ -1,6 +1,7 @@
 package com.company;
 
 public class Insertionsort extends Sorter {
+
     public static void sort(int[] array){
         for (int i = 1; i < array.length; i++) {
             int element = array[i];

@@ -2,39 +2,39 @@ package com.company;
 
 public class Quicksort extends Sorter {
 
-    private static void median(int[] a, int p, int r) {
-        int mid = (r+p)/2;
+    private static void median(int[] array, int left, int right) {
+        int mid = (right+left)/2;
 
-        if(a[p] <= a[mid] && a[mid] <= a[r]) {
-            swap(a, mid, r);
-        } else if(a[mid] <= a[p] && a[p] <= a[r]) {
-            swap(a, p, r);
-        } else if(a[r] <= a[mid] && a[mid] <= a[p]) {
-            swap(a, mid, r);
-        } else if(a[r] <= a[p] && a[p] <= a[mid]) {
-            swap(a, p, r);
+        if(array[left] <= array[mid] && array[mid] <= array[right]) {
+            swap(array, mid, right);
+        } else if(array[mid] <= array[left] && array[left] <= array[right]) {
+            swap(array, left, right);
+        } else if(array[right] <= array[mid] && array[mid] <= array[left]) {
+            swap(array, mid, right);
+        } else if(array[right] <= array[left] && array[left] <= array[mid]) {
+            swap(array, left, right);
         }
     }
 
-    private static int partition(int[] a, int p, int r) {
-        median(a, p, r);
-        int pivot = a[r];
-        int i = p-1;
-        for(int j = p; j < r; j++) {
-            if(a[j] <= pivot) {
+    private static int partition(int[] array, int left, int right) {
+        median(array, left, right);
+        int pivot = array[right];
+        int i = left-1;
+        for(int j = left; j < right; j++) {
+            if(array[j] <= pivot) {
                 i++;
-                swap(a, i, j);
+                swap(array, i, j);
             }
         }
-        swap(a, r, i+1);
+        swap(array, right, i+1);
         return i+1;
     }
 
-    public static void sort(int[] a, int p, int r) {
-        if(p < r) {
-            int s = partition(a, p, r);
-            sort(a, p, s-1);
-            sort(a, s+1, r);
+    public static void sort(int[] array, int left, int right) {
+        if(left < right) {
+            int split = partition(array, left, right);
+            sort(array, left, split-1);
+            sort(array, split+1, right);
         }
     }
 }
