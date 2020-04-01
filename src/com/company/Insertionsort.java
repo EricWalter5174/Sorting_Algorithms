@@ -1,6 +1,6 @@
 package com.company;
 
-public class Insertionsort extends Sorter {
+public class Insertionsort {
 
     public static void sort(int[] array){
         //iterate over the given array. note that index 0 is already considered sorted

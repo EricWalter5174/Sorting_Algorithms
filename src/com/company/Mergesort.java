@@ -2,7 +2,7 @@ package com.company;
 
 import java.util.Arrays;
 
-public class Mergesort extends Sorter{
+public class Mergesort {
 
     public static void sort(int[] array, int start, int end) {
         int middle = (start + end) / 2;
