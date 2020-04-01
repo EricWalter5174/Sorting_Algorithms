@@ -56,7 +56,7 @@ static long temp1, temp2, temp3, temp4;
             System.out.println("Time to sort an array of " + elements + " Elements using " + name + ": " + (timerEnd - timerStart) + "ms");
         }
         else{
-            System.out.println("Insertionsort: " + temp1 + "ms" + "\nHeapsort: \t\t" + temp2 + "ms" + "\nQuicksort: \t\t" + temp3 + "ms" + "\nMergesort: \t\t" + temp4 + "ms");
+            System.out.println("Insertionsort: \t" + temp1 + "ms" + "\nHeapsort: \t\t" + temp2 + "ms" + "\nQuicksort: \t\t" + temp3 + "ms" + "\nMergesort: \t\t" + temp4 + "ms");
         }
     }
 
