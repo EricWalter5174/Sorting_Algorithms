@@ -21,9 +21,9 @@ public class UtilityTool {
 
     }
 
-    public static int[] readNumber(String filename) throws FileNotFoundException {
+    public int[] readNumber(String filename) throws FileNotFoundException {
         Scanner lesen = new Scanner(new FileReader(filename));
-        ArrayList<Integer> al = new ArrayList<Integer>();
+        ArrayList<Integer> al = new ArrayList<>();
 
         while (lesen.hasNext()) {
             al.add(lesen.nextInt());
